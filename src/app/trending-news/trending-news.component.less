@@ -1,0 +1,33 @@
+header {
+    font-family: 'Playfair Display', serif;
+    border-left: 1px solid #45a3f0;
+    font-size: 1vw;
+    padding-left: 1vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+.container {
+    display: flex;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    padding-bottom: 1vw;
+    border-bottom: 1px solid #d8d8d8;
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    .image {
+        img {
+            width: 3vw;
+            height: 3vw;;
+        }
+    }
+}
+li {
+    &:first-child {
+        border-top: 1px solid #d8d8d8;
+        padding-top: 1vw;
+    }
+}

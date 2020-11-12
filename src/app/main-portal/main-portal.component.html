@@ -1,0 +1,17 @@
+<ul class="container">
+  <li *ngFor = "let newsitem of selctedNews" class="content">
+      <div class="image">
+          <img src={{newsitem.image}} >
+          <div class="mobileNewsItem">
+            <p class="title">{{newsitem.title}}</p>
+            <p>{{newsitem.content}}</p>
+            <p class="category">{{newsitem.category}}</p>
+          </div>
+        </div> 
+        <div class="newsItem" (click) = "sort(newsitem)">
+          <p class="title">{{newsitem.title}}</p>
+          <p>{{newsitem.content}}</p>
+          <p class="category">{{newsitem.category}}</p>
+        </div>
+  </li>
+</ul>

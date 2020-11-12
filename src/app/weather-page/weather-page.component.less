@@ -1,0 +1,62 @@
+@mobile: ~'only screen and (max-width: 420px)';
+ 
+nav {
+    padding-right: 13vw;
+    padding-left: 13vw;
+    margin-top: .75vw;
+    padding-top: .5vw;
+    padding-bottom: .5vw;
+    background-image: linear-gradient(to right, #057780, #174d99);
+    @media @mobile {
+        padding: 2vw 2vw;
+        margin: 0;
+        margin-top: -1vw;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        .title {
+            font-size: 1.5vw;
+            font-family: 'Playfair Display', serif;
+            color: white;
+            @media @mobile {
+                display: none;
+            }
+        }
+        .textArea {
+            flex-grow: 1;
+            display: flex;
+            background: white;
+            margin-left: 1vw;
+            input {
+                flex-grow: 1;
+                height: 1.8vw;
+                border: none;
+                padding-left: 1vw;
+                color: #b0b0b0;
+                @media @mobile {
+                    height: 10vw;
+                    padding-left: 2vw;
+                    padding-right: 2vw;
+                }
+            }
+            button {
+                height: 1.8vw;
+                border: none;
+                background: transparent;
+                @media @mobile {
+                    height: 10vw;
+                }
+                img {
+                    width: 1vw;
+                    height: 1vw;
+                    @media @mobile {
+                        width: 7vw;
+                        height: 7vw;
+                    }
+                }
+            }
+        }
+    }
+
+}

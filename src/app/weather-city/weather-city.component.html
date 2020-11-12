@@ -1,0 +1,63 @@
+<nav> 
+  <div class="container"> 
+    <div class="title">WEATHER</div>
+    <div class="textArea">
+      <input #city placeholder="Enter a city name"/>
+      <button [routerLink]="['/weather-city', city.value]"><img src="../../assets/search/iconmonstr-magnifier-2-1@2x.png"></button>
+    </div>
+  </div>
+</nav>
+<div class="contents">
+  <div class="background">
+    <img src="../../assets/rain/chicago.jpg">
+    <p>{{cityName}}</p>
+    <div class="sliderContent">
+        <button (click) = "toLeft()">&lt;</button>
+        <div class="header" appMovableArea>
+          <div appMovable>
+              <ul #slide >
+                  <li *ngFor = "let one of items; index as i "  (click)="onSelect(one)" 
+                  [style.width] = "one === selectedOne ? '30vw' : '25vw'"
+                  [style.border-bottom] = "one === selectedOne ? none :
+                    one.tempHigh === '16' ? '.3vw solid #cbe04b' : 
+                    one.tempHigh === '17' ? '.3vw solid #97d356' :
+                    one.tempHigh === '18' ? '.3vw solid #efbe2e' : 
+                    one.tempHigh >= '19' ? '.3vw solid #ffa759' :
+                    none"
+                  [style.border-top] = "one === selectedOne ? '.3vw solid #efbe2e' : 'none'" #li>
+                        <div class="dayitem">
+                          <span>{{weekDays[i].day}}</span>
+                          <h3>{{weekDays[i].date}}</h3>
+                        </div>
+                        <div class="dayitemMobile">
+                          <span>{{weekDays[i].day.slice(0,3)}}</span>
+                          <h3>{{weekDays[i].date}}</h3>
+                        </div>
+                        <div class="forecast">
+                          <div class="imageContainer">
+                            <img src={{one.icon}}>
+                          </div>
+                        
+                          <div class="temperature">
+                            <div class="high">{{one.tempHigh}} <span class="degree"></span></div>
+                            <div class="norm">
+                                {{one.tempNorm}} <span class="degree"></span>
+                            </div>
+                          </div>
+                          
+                          <div class="details" 
+                            [style.display] = "one === selectedOne ? 'flex' : 'none'">{{one.summary}}</div>
+                          </div>
+                        
+                  </li>
+              </ul>
+          </div>
+        </div>
+        <button (click) = "toRight()">></button>
+    </div>
+    
+  </div>
+  
+  <app-daily-reports [selected] = "selectedOne"></app-daily-reports>
+  <app-map-view ></app-map-view> 
+</div> 

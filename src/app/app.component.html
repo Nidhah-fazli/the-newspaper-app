@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container" *ngIf = "!mapShow">
+
+    <header>The Daily Burst</header>
+  
+    <nav>
+      <div class="navIcon"><img src="../../assets/nav/group-4.png"></div>
+      <ul class="navItems">
+        <li routerLink="/home">Home</li>
+        <li class="newsMenu">News <img src="../../assets/downIcon/group-5@2x.png">
+          <div class="newsMenuContainer">
+            <app-news-menu></app-news-menu>
+          </div>
+        </li>
+        <li>Sports <img src="../../assets/downIcon/group-5@2x.png"></li>
+        <li routerLink="/weather">Weather</li>
+        <li class="travelMenu">Travel <img src="../../assets/downIcon/group-5@2x.png">
+          <div class="travelMenuContainer">
+            <app-travel-menu></app-travel-menu>
+          </div> 
+        </li>
+        <li>Explore</li>
+        <li>Stock</li>
+        <li>Shop</li>
+      </ul>
+      <ul class="navItemsMob"> 
+        <li routerLink="/home">TDB</li>
+        <li>News </li>
+        <li>Sports </li>
+        <li routerLink="/weather">Weather</li>
+        <li>Travel </li>
+        <li>Shop</li>
+        <li (click) = "toggleShow()" ><img src="../../assets/mascot/group-2.png"></li>
+        <li><img src="../../assets/search/iconmonstr-magnifier-2-1@2x.png" style="color: white;"></li>
+      </ul>
+      <div class="search"><img src="../../assets/search/iconmonstr-magnifier-2-1.png"></div>
+    </nav>
+  
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
+
+</div>
+
+<app-full-screen *ngIf = "mapShow"></app-full-screen>

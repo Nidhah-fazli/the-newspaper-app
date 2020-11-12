@@ -1,0 +1,19 @@
+<div class="container">
+    <header>OTHER NEWS</header>
+    <div class="content">
+      <ul class="image">
+        <li *ngFor = "let newsitem of news">
+          <img src={{newsitem.image}}>
+          <p>{{newsitem.title}}</p>
+          <div class="newsSnippet">
+            <p>{{newsitem.content}}</p>
+            <div class="features">
+              <p>{{newsitem.author}}</p>
+              <p>{{newsitem.date}}</p>
+              <p>{{newsitem.shares}}</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>

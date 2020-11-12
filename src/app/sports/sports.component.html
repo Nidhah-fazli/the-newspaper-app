@@ -1,0 +1,17 @@
+<div class="container">
+  <header>SPORTS NEWS</header>
+  <div class="content">
+    <ul class="image">
+      <li *ngFor = "let newsitem of news">
+        <img src={{newsitem.image}}>
+        <p>{{newsitem.title}}</p>
+      </li>
+    </ul>
+    <ul class="newsSnippet">
+      <li *ngFor = "let newsitem of news">
+        <p>{{newsitem.content}}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+

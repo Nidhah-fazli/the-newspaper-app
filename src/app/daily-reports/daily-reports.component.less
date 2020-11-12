@@ -1,0 +1,256 @@
+@mobile: ~'only screen and (max-width: 420px)';
+
+.sliderContent{
+    margin-top: 1vw;
+    display: flex;
+    align-items: center;
+    margin-left: 13.5vw;
+    margin-right: 13.5vw;
+    width: calc(100% - 27vw);
+    padding-bottom: 3vw;
+    @media @mobile {
+        margin: 0;
+        width: 100%;
+        padding-bottom: 3vw;
+        overflow: hidden;
+    }
+    button {
+        height: 7vw;
+        width: 2vw;
+        border: none;
+        background: #dddddd;
+        color: white;
+        @media @mobile {
+           display: none;
+        }
+        &:hover {
+            background: #45a3f0;
+        }
+    }
+    .header {
+        padding-bottom: 1vw;
+        min-height: 17vw;
+        background: white;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        border-left: 1px solid #d8d8d8;
+        border-right: 1px solid #d8d8d8;
+        @media @mobile {
+            min-height: 77vw;
+            border: none;
+        }
+        ul {
+            display: flex;
+            min-width: 105vw;
+            min-height: 22vw;
+            transition: transform 2000ms ease;
+            position: relative;
+            @media @mobile {
+                min-width: 1800vw;
+                min-height: 77vw;
+            }
+            li {
+                font-size: .8vw;
+                font-family: mediumFont;
+                max-width: 18vw;
+                border-right: 1px solid #d8d8d8;
+                display: flex;
+                @media @mobile {
+                    font-size: 3vw;
+                    font-family: mediumFont;
+                    min-width: 15vw;
+                    max-width: 75vw;
+                }
+                .mainContent {
+                    padding-top: 1vw;
+                    min-width: 5vw;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    @media @mobile {
+                        min-width: 15vw;
+                    }
+                    .temperature {
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        img {
+                            width: 2vw;
+                            height: 2vw;
+                            @media @mobile {
+                                width: 6vw;
+                                height: 6vw;
+                            }
+                        }
+                        p {
+                            padding-top: 1vw;
+                        }
+                    }
+                    .pressure {
+                        color: #45a3f0;
+                    }
+                    .windDirection {
+                        display: flex;
+                        padding-top: 1vw;
+                        @media @mobile {
+                            padding-top: 2vw;
+                        }
+                        .round{
+                            height: 2vw;
+                            width: 2vw;
+                            padding-top: .5vw;
+                            padding-left: .2vw;
+                            border-radius: 2vw;
+                            border: 1px solid black;
+                            @media @mobile {
+                                height: 7vw;
+                                width: 7vw;
+                                padding-top: 1.5vw;
+                                padding-left: .5vw;
+                                border-radius: 7vw;
+                            }
+                        }
+                        .icon {
+                            position: relative;
+                            top: .5vw;
+                            @media @mobile {
+                                top: 1.5vw;
+                            }
+                        }
+                        .icon::before{
+                            content: "\f061";
+                            font-family: FontAwesome;
+                            display: inline-block;
+                            color: black;
+                        }                        
+                        
+                    }
+                }
+                
+            }
+
+            .timeContainer {
+                .timeContainerContent {
+                    padding: 1vw;
+                    width:13vw;
+                    display: none;
+                    background-color: #f9f8f7;
+                    color: black;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 0;
+                    //transition: width 2000ms ease-in;
+                    flex-direction: column;
+                    @media @mobile {
+                        width: 50vw;
+                        padding: 5vw;
+                    }
+                    .title {
+                        opacity: 0;
+                        transition: opacity 200ms ;
+                        font-size: 1vw;
+                        font-family: 'Playfair Display', serif;
+                        padding-bottom: 1vw;
+                        @media @mobile {
+                            font-size: 5vw;
+                            padding-bottom: 3vw;
+                        }
+                    }
+                    .reports {
+                        opacity: 0; 
+                        transition: opacity 200ms ;
+                        display: flex;
+                        font-size: .8vw;  
+                        padding-bottom: 1vw;
+                        border-bottom: 1px solid #d8d8d8;
+                        @media @mobile {
+                            font-size: 3vw;
+                            padding-bottom: 2vw;
+                        }
+                        .column1 {
+                            flex-grow: 1;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            color: #7c7c7c; 
+                            p {
+                                padding-bottom: 1vw; 
+                                @media @mobile {
+                                    padding-bottom: 3vw;
+                                }                      
+                            } 
+                        }
+                        .column2 {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            p {
+                                padding-bottom: 1vw;
+                                @media @mobile {
+                                    padding-bottom: 3vw;
+                                }                       
+                            }                      
+                        }
+                    }
+
+                    .otherReports {
+                        display: flex;
+                        flex-direction: column;
+                        p {
+                            font-size: .8vw;
+                            color: #7c7c7c;
+                            padding-top: 1vw;
+                            padding-bottom: 1vw;
+                            border-bottom: 1px solid #d8d8d8;
+                            @media @mobile {
+                                font-size: 3vw;
+                                padding-top: 5vw;
+                                padding-bottom: 5vw;
+                            }
+                            span {
+                                color:black;
+                            }
+                            &:last-child {
+                                border: none;
+                            }
+                        }
+                    }
+
+                    
+                }
+    
+                &:hover {
+                    border-top: 3px solid #ffa759;
+                    .timeContainerContent {
+                        @media @mobile {
+                            padding: 3vw;
+                        }
+                        padding: 1vw;
+                        display: flex;
+                        .title {
+                            opacity: 1;                          
+                        }
+                        .reports {
+                            opacity: 1;                            
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+    .degree {
+        position: relative;
+        top: -.4vw;
+    }
+    .degree::before{
+        content: "\f1db";
+        font-family: FontAwesome;
+        font-size: .4vw;
+        display: inline-block;
+        color: black;
+    }    
+}

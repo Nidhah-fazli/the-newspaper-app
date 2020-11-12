@@ -1,0 +1,115 @@
+@mobile: ~'only screen and (max-width: 420px)';
+.trendingMobileView {
+    display: none;
+    @media @mobile {
+        display: flex;
+        flex-direction: column;
+        header {
+            font-size: 5vw;
+            font-family: 'Playfair Display', serif;
+            border-left: 1px solid #45a3f0;
+            padding-left: 2vw;
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            padding-bottom: 2vw;
+            padding-top: 2vw;
+            border-bottom: 1px solid #d8d8d8;
+            .content {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                font-size: 4vw;
+                font-family: 'Playfair Display', serif;
+                p {
+                    &:nth-child(2) {
+                        color: #7c7c7c;
+                        font-size: 3vw;
+                    } 
+                }
+            }
+            .image {
+                img {
+                    width:20vw;
+                    height: 20vw;
+                }
+            }
+        }
+    }
+
+}
+
+.trending {
+    width:55.5vw;
+    @media @mobile {
+        display: none;
+    }
+
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1vw;
+    margin-bottom: 1vw;
+    border-bottom: 1px solid #d8d8d8;
+    header {
+        font-size: 1vw;
+        font-family: 'Playfair Display', serif;
+        border-left: 1px solid #45a3f0;
+        padding-left: .5vw;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+    }
+    .container {
+        display: flex;
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+            width: 15vw;
+            li {
+                font-size: .7vw;
+                line-height: .9vw;
+                color: #7c7c7c;
+                margin-top: 1vw;
+                padding-bottom: 1vw;
+                border-bottom: 1px solid #d8d8d8;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        } 
+        .images {
+            display: flex;
+            flex-direction: column;
+            ul {
+                display: flex;
+                flex-direction: row;
+                li {
+                    margin-left: 2vw;
+                    color: black;
+                    
+                    p { 
+                        width:8vw;
+                        margin-top: 1vw;
+                        font-family: 'Playfair Display', serif;
+                        font-size: .8vw;
+                        transition: color 1000ms ease;
+                    }
+                    &:hover {
+                        p {
+                            color: #45a3f0;
+                        }
+                    }
+                    img {
+                        width:8vw;
+                    }
+                }
+            }
+            
+            
+        }
+    }
+}

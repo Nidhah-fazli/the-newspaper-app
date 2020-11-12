@@ -1,0 +1,140 @@
+@mobile: ~'only screen and (max-width: 420px)';
+.slideshow {
+    width: 55.5vw;
+    
+    overflow: hidden;
+    border: solid 1px white;
+    position: relative;
+    @media @mobile {
+        width: 93vw;
+    }
+    .gradient {
+        background-image: linear-gradient(rgba(59, 59, 59,0.2), black);
+        padding: 2vw;
+        width:100%;
+        position: absolute;
+        bottom: 0;
+        color: white;
+        @media @mobile {
+            width: 93vw;
+        }
+        h2 {
+            font-size: .8vw;
+            line-height: 1.2vw;
+            font-family: 'Playfair Display', serif;
+            padding-left: 1vw;
+            border-left: 1px solid #efbe2e;
+            @media @mobile {
+                font-size: 3vw;
+                line-height: 4vw;
+            }
+        }
+        header {
+            font-size: 1vw;
+            line-height: 1.5vw;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: .5vw;
+            @media @mobile {
+                font-size: 5vw;
+                line-height: 6vw;
+                margin-bottom: 1.5vw;
+            }
+        }
+        
+
+        p {
+            font-size: .6vw;
+            line-height: 1vw;
+            margin-bottom: 2vw;
+            @media @mobile {
+                display: none;
+            }
+        }
+    }
+  }
+  
+  .slideshow-container {
+    width: 222vw;
+    display: flex;
+    font-size: 0;
+    transition: 1s ease;
+    height: 30vw;
+    @media @mobile {
+        width: 372vw;
+        height: 55vw;
+    }
+  }
+  
+  .slideshow-container:hover {
+    animation-play-state: paused;
+  }
+  
+  img {
+    @media @mobile {
+        width: 93vw;
+        height: 55vw;
+    }
+    width: 55.5vw;
+    height: auto;
+    display: inline-block;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .text-container {
+    height: 225px;
+    position: relative;
+  }
+  
+  
+  p {
+    position: relative;
+    top: -45%;
+    padding: 5px;
+  }
+  
+  .slide {
+    animation: slide 24s ease infinite;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    
+    12.5% {
+      transform: translateX(0%);
+    }
+    
+    25% {
+      transform: translateX(-25%);
+    }
+    
+    37.5% {
+      transform: translateX(-25%);
+    }
+    
+    50% {
+      transform: translateX(-50%);
+    }
+    
+    62.5% {
+      transform: translateX(-50%);
+    }
+    
+    75% {
+      transform: translateX(-75%);
+    }
+    
+    87.5% {
+      transform: translateX(-75%);
+    }
+    
+    99% {
+      transform: translateX(-75%);
+    }
+    
+    100% {
+      transform: translateX(0);
+    }
+  }

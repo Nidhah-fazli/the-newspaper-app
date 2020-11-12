@@ -1,0 +1,7 @@
+<header>LIVE NEWS</header>
+<ul>
+  <li *ngFor = "let item of items | async">
+    <p class="title">{{item.title}}</p>
+    <p class="content">{{item.content}}</p>    
+  </li>
+</ul>

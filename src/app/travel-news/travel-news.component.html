@@ -1,0 +1,12 @@
+<div class="slideshow">
+  <ul class="slideshow-container slide">
+    <li *ngFor = "let newsitem of news">
+      <img src={{newsitem.image}}>
+      <div class="gradient">
+        <h2>TRAVEL NEWS</h2>
+        <header>{{newsitem.title}}</header>
+        <p>{{newsitem.content}}</p>
+      </div>
+    </li>
+  </ul>
+</div>

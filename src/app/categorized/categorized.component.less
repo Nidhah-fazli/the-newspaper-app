@@ -1,0 +1,176 @@
+@mobile: ~'only screen and (max-width: 420px)';
+
+@keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    
+    12.5% {
+      transform: translateX(0%);
+    }
+    
+    25% {
+      transform: translateX(-25.5%);
+    }
+    
+    37.5% {
+      transform: translateX(-25.5%);
+    }
+    
+    50% {
+      transform: translateX(-51.3%);
+    }
+    
+    62.5% {
+      transform: translateX(-51.3%);
+    }
+    
+    75% {
+      transform: translateX(-70%);
+    }
+    
+    87.5% {
+      transform: translateX(-70%);
+    }
+    
+    95% {
+      transform: translateX(-70%);
+    }
+    
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+.slideshow {
+    @media @mobile {
+        width: 90vw;
+        margin: 0;
+        overflow: hidden;
+        border: solid 1px white;
+    }
+    ul {
+        &:hover {
+            @media @mobile{
+                animation-play-state: paused;
+            }
+        }
+
+        @media @mobile {
+            display: flex;
+            width: 280vw;
+            transition: 1s ease;
+            height: 80vw;
+            border-bottom: 1px solid #d8d8d8;
+            animation: slide 20s ease infinite;
+        }
+        li {
+            display: flex;
+            margin-right: 2vw;
+            margin-top: 2vw;
+            padding-bottom: 2vw;
+            border-bottom: 1px solid #d8d8d8;
+            width:55.5vw;
+            @media @mobile {
+                flex-direction: column;
+                border-bottom: none;
+                width:72vw;
+            }
+
+
+            &:nth-child(odd) {
+                header {
+                    border-left: 1px solid #efbe2e;
+                }
+            }
+            &:nth-child(even) {
+                header {
+                    border-left: 1px solid #45a3f0;
+                }
+            }
+            .content {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                min-height: 9vw;
+                
+                header {
+                    font-size: .8vw;
+                    font-family: mediumFont;
+                    padding-left: 1vw;
+                    @media @mobile {
+                        font-family: 'Playfair Display', serif;
+                        margin-bottom: 3vw;
+                        font-size: 5vw;
+                        padding-left: 3vw;
+                    }
+                    
+                }
+                .imageMobile {
+                    display: none;
+                    img {
+                        width:70vw;
+                        height:50vw;
+                        object-fit:fill;
+                    }
+                    @media @mobile {
+                        display: block;
+                    }
+                }
+                .newsSnippet {
+                    display: flex;
+                    align-items: center;
+                    margin-top: 2vw;
+                    margin-bottom: 2vw;
+                    .title {
+                        width: 50%;
+                        font-size: 1.2vw;
+                        font-family: 'Playfair Display', serif;
+                        margin-right: 2vw;
+                        @media @mobile {
+                            width: 95%;
+                            font-size: 3.7vw;
+                        }
+                    }
+                    .newsContent {
+                        width: 50%;
+                        margin-right: 2vw;
+                        line-height: 1.2vw;
+                        font-size: .8vw;
+                        font-family: mainFont;
+                        color: #414141;
+                        @media @mobile {
+                            display: none;
+                        }
+                    }
+                }
+                footer {
+                    display: flex;
+                    color: #7c7c7c;
+                    font-size: .8vw;
+                    max-height: 1vw;
+                    p {
+                        margin-right: .5vw;
+                        margin-left: .5vw;
+                    } 
+                    @media @mobile {
+                        font-size: 2vw;
+                        max-height: 3vw;
+                    }  
+                }
+            
+            }
+    
+            .image {
+                img {
+                    width:18vw;
+                    height:10vw;
+                    object-fit:fill;
+                }
+                @media @mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+}

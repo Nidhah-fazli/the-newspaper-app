@@ -1,0 +1,10 @@
+<nav> 
+  <div class="container">
+    <div class="title">WEATHER</div>
+    <div class="textArea">
+      <input #city placeholder="Enter a city name"/>
+      <button [routerLink]="['/weather-city', city.value]"><img src="../../assets/search/iconmonstr-magnifier-2-1@2x.png"></button>
+    </div>
+  </div>
+</nav>
+<app-globe></app-globe> 

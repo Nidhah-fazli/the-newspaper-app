@@ -1,0 +1,58 @@
+@keyframes fade{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+header {
+    font-family: 'Playfair Display', serif;
+    font-size: 1vw;
+    line-height: 1.2vw;
+    margin-top:1.5vw;
+    margin-bottom:1.5vw;
+    
+    padding-left: 1.5vw;
+    border-left: 1px solid #efbe2e;
+}
+ul {
+    display: flex;
+    flex-direction: column-reverse;
+    list-style: none;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    li {
+        &:nth-child(odd) {
+            .title {
+                color: #45a3f0;
+            }  
+        }
+        
+        &:nth-child(even) {
+            .title {
+                color: #efbe2e;
+            }
+        }
+
+        &:last-child {
+            animation: fade 2000ms ease;
+            border-top: 1px solid #d8d8d8;
+        }
+
+        display: flex;
+        flex-direction: column;
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1vw;
+            margin-top: .5vw;
+            margin-bottom: .5vw;
+        }
+        .content {
+            color: #7c7c7c;
+            font-size: .75vw;
+            line-height: 1vw;
+            padding-bottom: 1.2vw;
+            border-bottom: 1px solid #d8d8d8;
+        }
+    }
+}

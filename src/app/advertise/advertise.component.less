@@ -1,0 +1,19 @@
+@mobile: ~'only screen and (max-width: 420px)';
+
+li {
+    width: 55.5vw;
+    padding-bottom: 2vw;
+    border-bottom: 1px solid #d8d8d8;
+    margin: 0;
+    @media @mobile {
+        margin-top:2vw;
+        width: 93vw;
+    }
+    img {
+    width: 55.5vw;
+    @media @mobile {
+        width: 93vw;
+        height: 15vw;
+    }
+    }
+}

@@ -1,0 +1,95 @@
+<div class="container">
+    <agm-map *ngIf = "!wind"
+        [latitude]="latitude"
+        [longitude]="longitude"
+        [zoom]="zoom"
+        [disableDefaultUI]="false"
+        [zoomControl]="false"
+        (mapClick)="mapClicked($event)">
+
+        <agm-marker 
+            *ngFor="let m of markers; let i = index"
+            (markerClick)="clickedMarker(m.label, i)"
+            [latitude]="m.lat"
+            [longitude]="m.lng"
+            [label]="m.label"
+            [markerDraggable]="m.draggable"
+            [iconUrl] = "icon1"
+            (dragEnd)="markerDragEnd(m, $event)">
+        </agm-marker>
+        
+    </agm-map>
+
+    <agm-map *ngIf = "wind && temperature"
+        [latitude]="latitude"
+        [longitude]="longitude"
+        [zoom]="zoom"
+        [disableDefaultUI]="false"
+        [zoomControl]="false"
+        (mapClick)="mapClicked($event)">
+
+        <agm-marker 
+            *ngFor="let m of markers; let i = index"
+            (markerClick)="clickedMarker(m.label, i)"
+            [latitude]="m.lat"
+            [longitude]="m.lng"
+            [label]="m.label"
+            [markerDraggable]="m.draggable"
+            [iconUrl] = "icon2"
+            (dragEnd)="markerDragEnd(m, $event)">
+        </agm-marker>
+        
+    </agm-map>
+
+    
+    <div class="close" (click) = "close()">
+        <img src="../../assets/close/invalid-name.png">
+    </div>
+    <div class="bar">
+        <div class="playPause" (click) = "playPause()">
+            <img src="../../assets/path-3.png" *ngIf = "play">
+            <div class="pause" *ngIf = "!play"></div>
+        </div>
+        <div class="scroller">
+            <div class="weekscale" #slide >
+                <div class="scaleItem" *ngFor = "let day of days">
+                    <p>{{day}}</p>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="168" value ="0" class="slider" id="myRange" #slider [(ngModel)]="value">
+            </div>
+        </div>
+        <div class="arrow">
+            <img src="../../assets/arrow/group-5.png" (click) = "toRight()">
+            <img src="../../assets/arrow2/group-5-copy-5.png" (click) = "toLeft()">
+        </div>
+    </div>
+    <div class="keyoptions">
+        <div class="options" #options>
+            <label class="contain">Temperature
+                <input type="checkbox"  [(ngModel)]="temperature">
+                <span class="checkmark"></span>
+            </label>
+            <label class="contain">Wind
+                <input type="checkbox" [(ngModel)]="wind">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="collapse">
+            <p *ngIf = "option">Hide key and options</p>
+            <p *ngIf = "!option">Show key and options</p>
+            <img src="../../assets/uparroe/group-5.png" (click) = "closeOptions()">
+        </div>
+    </div>
+</div>

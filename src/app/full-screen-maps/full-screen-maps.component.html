@@ -1,0 +1,41 @@
+<div class="container">
+  <div #gmap class="maps" ></div>
+  
+  <div class="close" (click) = "close()">
+      <img src="../../assets/close/invalid-name.png">
+  </div>
+  <div class="bar">
+      <div class="playPause" (click) = "playPause()">
+          <img src="../../assets/path-3.png" *ngIf = "play">
+          <div class="pause" *ngIf = "!play"></div>
+      </div>
+      <div class="scroller">
+          <div class="weekscale" #slide >
+              <div class="scaleItem" *ngFor = "let day of days">
+                  <p>{{day}}</p>
+                  <ul>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                      <li></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="slidecontainer">
+              <input type="range" min="1" max="100" value ="0" class="slider" id="myRange" #slider [(ngModel)]="value">
+              <p>Value: <span id="demo">{{value}}</span></p>
+          </div>
+      </div> 
+      <div class="arrow">
+          <img src="../../assets/arrow/group-5.png" (click) = "toRight()">
+          <img src="../../assets/arrow2/group-5-copy-5.png" (click) = "toLeft()">
+      </div>
+  </div>
+</div>
+<div id="content">
+  {{value}}
+</div>

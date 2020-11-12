@@ -1,0 +1,45 @@
+<div class="sliderContent">
+    <button (click) = "toLeft()">&lt;</button>
+    <div class="header">
+        <ul #slide *ngIf = "selected">
+            <li *ngFor = "let item of selected.data" class="timeContainer">
+                <div class="mainContent">
+                        <p>{{item.time}}</p> 
+                        <div class="temperature" [style.justify-content] = "item.temperature === '63.1' ? flex-end : flex-start">
+                            <img src={{item.icon}}>
+                            <p>{{item.temperature}}<span class="degree"></span></p>
+                        </div> 
+                        <p class="pressure">{{item.precipIntensity}}</p>
+                        <div class="windDirection">
+                            <div class="round">{{item.windSpeed}}</div>
+                            <div #wind class="icon"></div>
+                        </div>
+                </div>
+                <div class="timeContainerContent">
+                    <div class="title">{{item.precipType}}</div>
+                    <div class="reports">
+                        <div class="column1">
+                            <p>Humidity</p>
+                            <p>Pressure</p>
+                            <p>Visibilty</p>
+                        </div>
+                        <div class="column2">
+                            <p>{{item.humidity}}</p>
+                            <p>{{item.pressure}}</p>
+                            <p>{{item.visibility}}</p>
+                        </div>
+                    </div>
+                    <div class="otherReports">
+                        <p>Temprature feels like <span>{{item.apparentTemperature}}</span><span class="degree"></span></p>
+                        <p>Chance of precipitation</p>
+                        <p>A gentile breez from 
+                                {{item.windDirection}}</p>
+                    </div>
+                    
+                </div>
+            </li>
+          </ul>
+      
+    </div>
+    <button (click) = "toRight()">></button>
+</div>

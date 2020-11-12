@@ -1,0 +1,37 @@
+<div class="trendingMobileView">
+  <header>TRENDING NEWS</header>
+  <ul>
+    <li *ngFor = "let newsitem of news">
+      <div class="content">
+        <p>{{newsitem.title}}</p>
+        <p>{{newsitem.shares}}</p>
+      </div>
+      <div class="image">
+        <img src={{newsitem.image}}>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="trending">
+    <header>TRENDING<br>
+       NEWS</header>
+    
+    <div class="container">
+      <div class="content">
+        <ul #content >
+          <li *ngFor = "let newsitem of news">
+            <p>{{newsitem.content}}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="images">
+          <ul>
+            <li *ngFor = "let newsitem of news">
+              <img src={{newsitem.image}}>
+              <p>{{newsitem.title}}</p>
+            </li>
+          </ul>
+         
+      </div>
+    </div>
+</div>

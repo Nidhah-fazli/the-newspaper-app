@@ -1,0 +1,126 @@
+@mobile: ~'only screen and (max-width: 420px)';
+@tablet: ~'only screen and (max-width: 1166px)';
+@ipad: ~'only screen and (max-width: 664px) and (min-width:421px)';
+
+@font-face {
+    font-family: headerFont;
+    src: url('../../assets/fonts/CloisterBlack.ttf');
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    
+    .show {
+        height: 0;
+        @media @mobile {
+            height:auto;
+        }
+    }
+
+    .trendingTopics {
+        color: #414141;
+        margin-left: 13.5vw;
+        margin-right: 13.5vw;
+        position: relative;
+        top:15px;
+        border-bottom: 1px solid #eeeeee;
+        ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 0px;
+            li {
+                font-size: .6vw;
+                margin: .7vw .4vw;
+                &:first-child {
+                    color: #45a3f0;
+                    &:hover {
+                        color: #45a3f0;
+                        text-decoration: none;
+                    }
+                }
+                &:hover {
+                    color: #efbe2e;
+                    text-decoration: underline;
+                }
+            }
+        }
+        @media @mobile {
+            display: none;
+        }
+    }
+    
+    .mainPortal {
+        display: flex;
+        flex-direction: row;
+        margin-left: 13.5vw;
+        margin-right: 13.5vw;
+        min-width: calc(100% - 27vw);
+        @media @mobile {
+            margin-left:12px;
+            margin-right: 12px;         
+        }
+        .main {
+            flex-grow: 1;
+            margin-right: 4vw;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            top:15px;
+            
+            .addAndNewsContainer {
+                display: flex;
+                flex-direction: column;
+                @media @mobile {
+                    flex-direction: column-reverse;
+                }
+            }
+
+            .liveNewsMobile {
+                display: none;
+                height: 150px;
+                @media @mobile {
+                    display: block;
+                    margin-top: 10px;            
+                }
+                border-bottom: 1px solid #d8d8d8;
+            }
+
+            .addAndNews {
+                @media @mobile {
+                    display: none;
+                }
+            }
+            
+            @media @mobile {
+                top:0px;
+                margin: 0;
+                width: 750vw;
+            }
+        }
+
+        .updatingContainer {
+            width: 23%;
+            display: flex;
+            flex-direction: column;
+            @media @mobile {
+                display: none;
+            }
+            .liveNewsTicker {
+               
+                
+            }
+            .trendingNews {
+                @media @mobile {
+                    display: none;
+                } 
+            }
+        }
+    }
+    
+}

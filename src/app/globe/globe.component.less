@@ -1,0 +1,191 @@
+@mobile: ~'only screen and (max-width: 420px)';
+
+.container {
+    background-image: linear-gradient(to right, #06a8b3 , #1764d1);
+    margin-top: -.1vw;
+    margin-bottom: -4vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    padding-right: 13vw;
+    padding-left: 13vw;
+    display: flex;
+    @media @mobile {
+        padding: 2vw 2vw;
+        padding-bottom: 10vw;
+        padding-top: 4vw;
+        margin: 0;
+        margin-bottom: -7vw;
+
+    }
+    .globe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+            font-family: mediumFont;
+            color: #cecece;
+            font-size: .8vw;
+            letter-spacing: .05vw;
+            line-height: 2vw;
+            @media @mobile {
+                display: none;
+            }
+        }
+        .title {
+            font-size: 1.5vw;
+            font-family: 'Playfair Display', serif;
+            color: white;
+        }
+        .outer {
+            padding-top: 3vw;
+            display: flex;
+            justify-content: center;
+            width: 1000px;
+            margin:0;
+            z-index: 1;
+            overflow: hidden;
+            @media @mobile {
+                width: 95vw;
+              }
+            .container1 {
+              height: 400px;
+              width: 400px;
+              border-radius: 400px;
+              z-index: 100003;
+              overflow: hidden;
+
+              @media @mobile {
+                height: 93vw;
+                width: 93vw;
+                border-radius: 93vw;
+              }
+              .markerContainer {
+                width:700px;
+                height: 500px;
+                z-index: 100003;
+                .maps {
+                    width:700px;
+                    height: 500px;
+                    display: inline-block;
+                    position: relative;
+                }
+                .marker {
+                    width: 5vw;
+                    height: 2vw;
+                    border-radius: 1vw;
+                    background: black;
+                    color: white;
+                    text-align: center;
+                    position: absolute;
+                    top: 20%;
+                    left: 20%;
+                    z-index: 100004;
+                }
+                
+              }
+              
+          }
+        }
+
+        .dragScroller {
+            display: none;
+            @media @mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10vw;
+                margin-bottom: 10vw;
+                .slidecontainer {
+                    width: 83vw;
+                    .slider {
+                        -webkit-appearance: none;
+                        width: 100%;
+                        height: 10px;
+                        border-radius: 5px;
+                        background: white;
+                        outline: none;
+                        -webkit-transition: .2s;
+                        transition: opacity .2s;
+                        &:hover {
+                            opacity: 1;
+                        }
+                        &::-webkit-slider-thumb {
+                            -webkit-appearance: none;
+                            appearance: none;
+                            width: 28px;
+                            height: 28px;
+                            border: 0;
+                            background: url('../../assets/scroll/group-25.png');
+                            cursor: pointer;
+                        }
+                    }
+
+                }
+                p {
+                    margin-top: 10vw;
+                    display: block;
+                    color: white;
+                    font-size: 5vw;
+                    font-family: mediumFont;
+                }
+            }
+        }
+
+        .drag {
+            @media @mobile {
+                display: none;
+            }
+            display: flex;
+            align-items: center;
+            p {
+                color: white;
+                margin-right: 1vw;
+                margin-left: 1vw;
+            }
+            img {
+                height: .8vw;
+            }
+        }
+
+        .detailedMap {
+            margin-top: 2vw;
+            @media @mobile {
+                margin-top: 4vw;
+            }
+            .iconContainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 15vw;
+                height: 2.5vw;
+                border-radius: 2.5vw;
+                padding: .5vw;
+                background: rgba(0, 0, 0, 0.459);
+                color: white;
+                @media @mobile {
+                    width: 65vw;
+                    height: 13vw;
+                    border-radius: 13vw;
+                }
+                p {
+                    font-size: .8vw;
+                    font-family: mediumFont;
+                    margin-left: 1vw;
+                    opacity: 1;
+                    @media @mobile {
+                        display: block;
+                        font-size: 4vw;
+                    }
+                }
+                img {
+                    widows: 1vw;
+                    height: 1vw;;
+                    @media @mobile {
+                        width: 8vw;
+                        height: 8vw;
+                    }
+                }
+            }
+        }
+    }
+}

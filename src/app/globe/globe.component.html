@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="globe">
+    <p class="title">Weather forcast of all locations around the globe.</p>
+    <p>Please click and drag in any blank space inside the globe to rotate the map.</p> 
+    <div class="outer" appMovableArea>
+      <div class="container1" >
+        <div #map>
+            <div class="markerContainer" appMovable>
+                <div #gmap class="maps" ></div>
+                <div class="marker">New</div>
+            </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="dragScroller">
+        <div class="slidecontainer">
+            <input type="range" min="0" max="100" value ="0" class="slider" id="myRange" #slider [(ngModel)]="value">
+        </div>
+        <p>DRAG TO ROTATE EARTH</p>
+    </div>
+
+    <div class="drag">
+      <img src="../../assets/icons/arrow-left/group-9.png" (click) = "toLeft()">
+      <p>DRAG TO ROTATE</p>
+      <img src="../../assets/icons/arrow-right/group-9-copy.png" (click) = "toRight()">
+    </div>
+    <div class="detailedMap">
+      <div class="iconContainer" (click) = "fullScreen()">
+        <img src = "../../assets/maps/placeholder-on-map-paper-in-perspective.png" >
+        <p>Click for Detailed Map</p>
+      </div>
+    </div>
+  </div>
+  <div class="add"></div>
+</div>

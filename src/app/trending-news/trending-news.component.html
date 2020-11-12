@@ -1,0 +1,21 @@
+<header>TRENDING NEWS</header>
+<ul>
+  <li class="container" *ngFor = "let newsitem of news">
+    <div class="content">
+      <p class="title">{{newsitem.title}}</p> 
+      <div class="snip">
+        <p>
+          {{newsitem.author}}
+        </p>
+        <p>
+          {{newsitem.shares}}
+        </p>
+      </div>
+    </div>
+    <div class="image">
+      <img src={{newsitem.image}}>
+    </div>
+  </li>
+</ul>
+
+  

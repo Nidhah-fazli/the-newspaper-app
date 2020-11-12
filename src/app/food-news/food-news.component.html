@@ -1,0 +1,27 @@
+<div class="slideshow">
+  <ul>
+      <li *ngFor = "let newsitem of news">
+        <div class="content">
+          <header>{{newsitem.category}}</header>
+          <div class="imageMobile">
+              <img src={{newsitem.image}}>
+          </div>
+          <div class="newsSnippet">
+            <p class="title">{{newsitem.title}}</p>
+            <p class="newsContent">
+              {{newsitem.content}}
+            </p>
+          </div> 
+          <footer>
+            <p>{{newsitem.author}}</p>
+            <p>{{newsitem.time}}</p>
+            <p>{{newsitem.shares}}</p>
+            <p>{{newsitem.views}}</p>
+          </footer>
+        </div>
+        <div class="image">
+          <img src={{newsitem.image}}>
+        </div>
+      </li>
+    </ul>
+</div>
